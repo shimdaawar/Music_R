@@ -12,6 +12,6 @@ The use of music as a means of calming, energizing, and motivating oneself is wi
 
 ## Badges
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)]([https://choosealicense.com/licenses/mit/](https://github.com/shimdaawar/Music_R/blob/main/LICENSE))
 [![AGPL License](https://img.shields.io/badge/python-3.9.0-blue)]()
 
