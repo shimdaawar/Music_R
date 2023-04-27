@@ -109,8 +109,10 @@ def songprofile():
             userSongProfile[predict_mood(j)].append(j)
             print(j)
     with open('userSongProfile.json', "w") as file:
-        file.write(userSongProfile)
+        json.dump(userSongProfile,file)
+        file.close()
     with open('userTopSongURI.json', "w") as file:
-        file.write(userTopSongURI)
+        json.dump(userTopSongURI,file)
+        file.close()
     return userSongProfile,userTopSongURI
 

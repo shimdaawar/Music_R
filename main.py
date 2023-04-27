@@ -18,13 +18,14 @@ print(weather_tag)
 
 final_tag= list(set(taggen(weather_tag,mood_tag)))
 
-
+userSongProfile={}
+userTopSongURI=[]
 if os.path.exists('userSongProfile.json'):
     with open('userSongProfile.json', "r") as file:
         userSongProfile = json.load(file)
         file.close()
-    with open('userSongProfile.json', "r") as file:
-        userSongProfile = json.load(file)
+    with open('userTopSongURI.json', "r") as file:
+        userTopSongURI = json.load(file)
         file.close()
 else:
     userSongProfile,userTopSongURI= songprofile()
