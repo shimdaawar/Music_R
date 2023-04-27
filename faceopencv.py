@@ -14,9 +14,9 @@ classifier = load_model(
     r'trained_model', compile=False)
 
 
-emotion_labels = ['Angry','Fear', 'Happy', 'Neutral', 'Sad']
+emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Neutral', 'Sad', 'Surprised']
 
-duration = 10
+duration = 5
 
 start_time = time.time()
 
