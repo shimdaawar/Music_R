@@ -41,6 +41,6 @@ for i in userTopSongURI:
 userSimilarSongURI = list(set(userSimilarSongURI))
 
 recommendedSong = songrecommender(userMoodSongURI, userSimilarSongURI)
-
+print('Your Playlist has been created')
 createplaylist(recommendedSong,mood_tag)
 
