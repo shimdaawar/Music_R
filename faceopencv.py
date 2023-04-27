@@ -9,13 +9,12 @@ import numpy as np
 import time
 
 face_classifier = cv2.CascadeClassifier(
-    r'C:\Users\shivam\Desktop\MajorProjext\haarcascade_frontalface_default.xml')
+    r'haarcascade_frontalface_default.xml')
 classifier = load_model(
-    r'C:\Users\shivam\Desktop\MajorProjext\trained_model\trained_model', compile=False)
+    r'trained_model', compile=False)
 
 
-emotion_labels = ['Angry', 'Disgust', 'Fear',
-                  'Happy', 'Neutral', 'Sad', 'Surprise']
+emotion_labels = ['Angry','Fear', 'Happy', 'Neutral', 'Sad']
 
 duration = 10
 
