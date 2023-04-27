@@ -1,5 +1,7 @@
-from faceopencv import mood
+#from faceopencv import mood
 from date_time import weathertime
+import os
+
 from taggen import *
 from songprofile import *
 import subprocess
@@ -8,14 +10,24 @@ from helper import *
 from recomender import *
 from createplaylist import *
 
-mood_tag=mood()
+#mood_tag=mood()
+mood_tag='Happy'
 
 weather_tag=weathertime()
 print(weather_tag)
 
 final_tag= list(set(taggen(weather_tag,mood_tag)))
 
-userSongProfile,userTopSongURI= songprofile()
+
+if os.path.exists('userSongProfile.json'):
+    with open('userSongProfile.json', "r") as file:
+        userSongProfile = json.load(file)
+        file.close()
+    with open('userSongProfile.json', "r") as file:
+        userSongProfile = json.load(file)
+        file.close()
+else:
+    userSongProfile,userTopSongURI= songprofile()
 
 userMoodSongURI=[]
 for i in  final_tag:
