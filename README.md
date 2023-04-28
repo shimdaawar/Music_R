@@ -7,6 +7,7 @@ The use of music as a means of calming, energizing, and motivating oneself is wi
 
 - [@fizzzemdegs](https://github.com/fizzzemdegs)
 - [@shimdaawar](https://github.com/shimdaawar)
+- [@soumitra3044](https://github.com/soumitra3044)
 
 
 
