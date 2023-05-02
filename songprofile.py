@@ -112,7 +112,7 @@ def songprofile():
         json.dump(userSongProfile,file)
         file.close()
     with open('userTopSongURI.json', "w") as file:
-        json.dump(userTopSongURI,file)
+        json.dump(userTopSongURI, file)
         file.close()
-    return userSongProfile,userTopSongURI
+    return userSongProfile, userTopSongURI
 

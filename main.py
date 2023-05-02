@@ -8,12 +8,14 @@ from helper import *
 from recomender import *
 from createplaylist import *
 
-mood_tag=mood()
+mood_tag = mood()
+print('Facial Mood Detected: ', mood_tag)
 
-weather_tag=weathertime()
-print(weather_tag)
+weather_tag = weathertime()
+print('Weather Tag: ', weather_tag)
 
-final_tag = list(set(taggen(weather_tag,mood_tag)))
+final_tag = list(set(taggen(weather_tag, mood_tag)))
+print('Final List of Tag with Priority: ', final_tag)
 
 userSongProfile = {}
 userTopSongURI = []
@@ -30,17 +32,15 @@ else:
 userMoodSongURI = []
 for i in final_tag:
     userMoodSongURI += userSongProfile[i][0:5]
-    
-userSimilarSongURI=[]
+
+userSimilarSongURI = []
 for i in userTopSongURI:
-    songURI,artistURI = getTrackandArtistURI(i)
-    print(songURI,artistURI)
-    similarsong= getSimilarTrack(songURI,artistURI)
+    songURI, artistURI = getTrackandArtistURI(i)
+    similarsong = getSimilarTrack(songURI, artistURI)
     print(similarsong)
     userSimilarSongURI += similarsong
 userSimilarSongURI = list(set(userSimilarSongURI))
 
 recommendedSong = songrecommender(userMoodSongURI, userSimilarSongURI)
-print('Your Playlist has been created')
-createplaylist(recommendedSong,mood_tag)
-
+createplaylist(recommendedSong, mood_tag)
+print('///Your Playlist has been created///')

@@ -163,14 +163,12 @@ def getTrackandArtistURI(songURI):
 
 def getSimilarTrack(songURI,artistURI):
     headers = {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + getSpotifyToken()
     }
 
     payload ={
         'limit': 5,
-        'market':'ES',
+        'market': 'ES',
         'seed_artists': artistURI,
         'seed_tracks': songURI
     }
@@ -178,5 +176,5 @@ def getSimilarTrack(songURI,artistURI):
     data=r.json()
     similarTrackURI=[]
     for i in range(5):
-        similarTrackURI.append(data['tracks'][0]['id']) 
+        similarTrackURI.append(data['tracks'][i]['id'])
     return similarTrackURI

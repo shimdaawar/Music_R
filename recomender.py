@@ -10,7 +10,7 @@ def songrecommender(userSongURI, similarSongURI):
         data=getTrackData(i)
         userSongData.append(data[0][6:-2])
         print(data[0][0])
-    print("0000000000000000000000000000000000000000000000000010110101011010101010110001010110101010100")
+    print("00000000000000000000000000000000000000000000000000000000000000000000000")
     similarSongData = []
     for i in similarSongURI:
         data = getTrackData(i)
