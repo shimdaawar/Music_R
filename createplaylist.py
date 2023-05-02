@@ -5,7 +5,7 @@ from datetime import datetime
 def createplaylist(recommendedSongURI,mood_tag):
     # Set up authentication using SpotifyOAuth
     scope = "playlist-modify-public"  # Modify public playlists
-    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope, client_id="c5520484087e493a9acc091f8d6eda4a", client_secret="3321de158815455cb70ea63c63e8173f",redirect_uri="http://localhost:3000/callback"))
+    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope, client_id="a2ed8135191844b383ca1740f5238122", client_secret="65f669b5be404acfa4512f0f1f9b9dd3",redirect_uri="http://localhost:3000/callback"))
 
     # Create a new playlist
     playlist_name = str(mood_tag) + ' ' + str(datetime.now().strftime("%H:%M:%S"))
