@@ -1,20 +1,23 @@
 from faceopencv import mood
-from date_time import weathertime
-from taggen import *
+from weathercode import *
 from songprofile import *
 import json
 import os
 from helper import *
 from recomender import *
 from createplaylist import *
+from timecode import *
+from decisiontree import *
+import warnings
+import webbrowser
 
-mood_tag = mood()
+warnings.filterwarnings("ignore")
+mood_tag = mood()b
 print('Facial Mood Detected: ', mood_tag)
+weather_tag = weather_tag()
+time_tag = time_code_generator()
 
-weather_tag = weathertime()
-print('Weather Tag: ', weather_tag)
-
-final_tag = list(set(taggen(weather_tag, mood_tag)))
+final_tag = list(set(decision_tree(weather_tag, mood_tag, time_tag)))
 print('Final List of Tag with Priority: ', final_tag)
 
 userSongProfile = {}
@@ -42,5 +45,6 @@ for i in userTopSongURI:
 userSimilarSongURI = list(set(userSimilarSongURI))
 
 recommendedSong = songrecommender(userMoodSongURI, userSimilarSongURI)
-createplaylist(recommendedSong, mood_tag)
+playlist_URI = createplaylist(recommendedSong, mood_tag)
 print('///Your Playlist has been created///')
+webbrowser.open('https://open.spotify.com/playlist/'+playlist_URI)

@@ -175,6 +175,6 @@ def getSimilarTrack(songURI,artistURI):
     r = requests.get('https://api.spotify.com/v1/recommendations', headers=headers, params=payload)
     data=r.json()
     similarTrackURI=[]
-    for i in range(5):
+    for i in range(3):
         similarTrackURI.append(data['tracks'][i]['id'])
     return similarTrackURI

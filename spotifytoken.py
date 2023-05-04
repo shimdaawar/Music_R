@@ -7,7 +7,7 @@ import json
 
 def getSpotifyToken():
     clientId = 'a2ed8135191844b383ca1740f5238122'
-    clientSecret = '65f669b5be404acfa4512f0f1f9b9dd3'
+    clientSecret = '2b2ab626d82a4d1fb3dad785c4c07221'
     url = "https://accounts.spotify.com/api/token"
     headers = {}
     data = {}

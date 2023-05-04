@@ -20,7 +20,6 @@ def songrecommender(userSongURI, similarSongURI):
     userSongData = np.array(userSongData)
     similarSongData= np.array(similarSongData)
     similarity_matrix = cosine_similarity(userSongData, similarSongData)
-    print('hello')
     top_values = (-similarity_matrix).argsort(axis=None)[:(len(userSongURI)*len(similarSongURI))]
     top_indices = np.unravel_index(top_values, similarity_matrix.shape)
 

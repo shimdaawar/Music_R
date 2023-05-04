@@ -2,20 +2,26 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from datetime import datetime
 
-def createplaylist(recommendedSongURI,mood_tag):
+
+
+
+def createplaylist(recommendedSongURI, mood_tag):
     # Set up authentication using SpotifyOAuth
     scope = "playlist-modify-public"  # Modify public playlists
-    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope, client_id="a2ed8135191844b383ca1740f5238122", client_secret="65f669b5be404acfa4512f0f1f9b9dd3",redirect_uri="http://localhost:3000/callback"))
+    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope, client_id="a2ed8135191844b383ca1740f5238122",
+                                                   client_secret="2b2ab626d82a4d1fb3dad785c4c07221",
+                                                   redirect_uri="http://localhost:3000/callback"))
 
     # Create a new playlist
-    playlist_name = str(mood_tag) + ' ' + str(datetime.now().strftime("%H:%M:%S"))
+    playlist_name = str(mood_tag)+ ' '+ str(datetime.now().strftime("%H:%M:%S"))
     playlist_description = "A new playlist created using Spotipy"
     user_id = sp.me()["id"]  # Get current user's ID
     playlist = sp.user_playlist_create(user=user_id, name=playlist_name, description=playlist_description)
 
     # Add tracks to the playlist
-    head='spotify:track:'
+    head = 'spotify:track:'
     track_uris = []
     for i in recommendedSongURI:
-        track_uris.append(head+i)
+        track_uris.append(head + i)
     sp.playlist_add_items(playlist_id=playlist["id"], items=track_uris)
+    return playlist["id"]

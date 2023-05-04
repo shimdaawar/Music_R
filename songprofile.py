@@ -20,9 +20,13 @@ from sklearn.model_selection import cross_val_score, KFold, train_test_split
 from sklearn.preprocessing import LabelEncoder,MinMaxScaler
 from sklearn.pipeline import Pipeline
 
+import warnings
+
+warnings.filterwarnings("ignore")
+
 
 def songprofile():
-    df = pd.read_csv("data/new_data.csv")
+    df = pd.read_csv("data/song_profile_data.csv")
 
     col_features = df.columns[6:-3]
     X= MinMaxScaler().fit_transform(df[col_features])
